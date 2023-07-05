@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title> Hoverable Dropdown Example </title>
+		<meta charset="UTF-8">
+	</head>
+	<style>
+		
+		body{
+			
+			font-family: Trebuchet MS;
+			
+		}
+		
+		.dropdown{
+			
+			position: relative;
+			display: inline-block;
+			
+		}
+		
+		.hover-drop-btn{
+			
+			font-family: Trebuchet MS;
+			color: white;
+			background-color: tomato;
+			position: relative;
+			padding: 10px;
+			border: none;
+			
+		}
+		
+		.dropdown-content{
+			
+			display: none;
+			position: absolute;
+			background-color: floralwhite;
+			box-shadow: 2px 2px 2px coral;
+			min-width: 160px;
+			z-index: 1;
+			
+		}
+		
+		.dropdown-content a{
+			
+			color: black;
+			padding: 10px 10px;
+			display: block;
+			text-decoration: none;
+			font-size: 14px;
+			
+		}
+		
+		.dropdown-content a:hover {
+			background-color: bisque;
+		}
+		
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+		
+		.dropdown:hover .hover-drop-btn {
+			background-color: coral;
+		}
+		
+	</style>
+	<body>
+		<h2>Hoverable Dropdown Example</h2>
+		
+		<div class="dropdown">
+			<button class="hover-drop-btn"> Hover over me! </button>
+			<div class="dropdown-content">
+				
+				<a href="#">About</a>
+				<a href="#">How to use</a>
+				<a href="#">Rules</a>
+				<a href="#">Feedback</a>
+				
+			</div>
+		</div>
+	</body>
+</html>
