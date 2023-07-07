@@ -1,0 +1,140 @@
+<html>
+	<head>
+		<title> Horizontal Tabs Example </title>
+		<meta charset="UTF-8">
+	</head>
+	<style>
+		
+		body{
+			
+			font-family: Trebuchet MS;
+			
+		}
+		
+		.tab-container{
+			
+			overflow: hidden;
+			background-color: lavenderblush;
+			padding: 10px;
+			border: 1px solid #c59ecbb8;
+			box-shadow: 1px 1px 2px mediumpurple;
+			
+		}
+		
+		.tab-links{
+			
+			background-color: lavenderblush;
+			font-family: Trebuchet MS;
+			padding: 10px;
+			border: none;
+			float: left;
+			outline: none;
+			cursor: pointer;
+			transition: 0.3s;
+			z-index: 1;
+			font-size: 14px;
+			
+		}
+		
+		.tab{
+			
+			overflow: hidden;
+			background-color: lavenderblush;
+			padding: 10px;
+			border: 1px solid #c59ecbb8;
+			box-shadow: 1px 1px 2px mediumpurple;
+			display: none;
+			color: darkslategray;
+			
+		}
+		
+		.tab-links:hover{
+			
+			background-color: thistle;
+			border-radius: 3px;
+			
+		}
+		
+		.tab-links:active{
+			
+			background-color: #d8bfd845;
+			border-radius: 3px;
+			
+		}
+		/*
+		
+		.tab-content{
+			
+			background-color: white;
+			color: darkslategray;
+			display: none;
+			border: 1px solid #c59ecbb8;
+			border-top: none;
+			
+		} */
+		
+	</style>
+	<body>
+		
+		<div class="tab-container">
+			
+			<button class="tab-links" onclick="openTab(event, 'tab1')"> About </button>
+			<button class="tab-links" onclick="openTab(event, 'tab2')"> Rules </button>
+			<button class="tab-links" onclick="openTab(event, 'tab3')"> Feedback </button>
+			
+		</div>
+		
+		<div id="tab1" class="tab">
+			<h3> About us </h3>
+			<p>
+				This is a dummy website.
+			</p>
+		</div>
+		
+		<div id="tab2" class="tab">
+			<h3> Rules </h3>
+			<p>
+				Be kind most of all...
+			</p>
+		</div>
+		
+		<div id="tab3" class="tab">
+			<h3> Feedback </h3>
+			<p>
+				Let us know...
+			</p>
+		</div>
+		
+		<script>
+			
+			function openTab(event, tabName){
+				
+				var i, tabContent, tabLinks;
+				tabContent = document.getElementsByClassName("tab");
+				
+				for (i = 0; i < tabContent.length; i++){
+					
+					tabContent[i].style.display = "none";
+					
+				}
+				
+				tabLinks = document.getElementsByClassName("tab-links");
+				
+				for (i = 0; i < tabLinks.length; i++){
+					
+					tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+					
+				}
+				
+				document.getElementById(tabName).style.display = "block";
+				
+				event.currentTarget.className += " active";
+				
+			}
+		</script>
+		
+		<h2> Horizontal Tabs Example </h2>
+		
+	</body>
+	
+</html>
