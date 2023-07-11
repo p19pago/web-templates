@@ -1,0 +1,159 @@
+<html>
+	<head>
+		<title> Full Page Tabs Example </title>
+	</head>
+	<style>
+		
+		body{
+			
+			font-family: Trebuchet MS;
+			
+		}
+		
+		.tab-links{
+			
+			font-family: Trebuchet MS;
+			background-color: #597676bf;
+			color: white;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			font-size: 14px;
+			padding: 14px 16px;
+			font-size: 15px;
+			width: 25%;
+			float: left;
+			font-weight: bold;
+			
+		}
+		
+		.tab-links:hover{
+			
+			background-color: #cad7d3;
+			color: slategray;
+			
+		}
+		
+		.tab-content{
+			
+			color: white;
+			display: none;
+			padding: 100px 20px;
+			height: 100%;
+			
+		}
+		
+		#About {
+			
+			background-color: coral;
+			
+		}
+		
+		#Rules{
+			
+			    background-color: darkseagreen;
+			
+		}
+		
+		#Feedback{
+			
+			background-color: rosybrown;
+			
+		}
+		
+		#Contact{
+			
+			background-color: sandybrown;
+			
+		}
+/*
+
+#Home {background-color: red;}
+#News {background-color: green;}
+#Contact {background-color: blue;}
+#About {background-color: orange;} */
+		
+	</style>
+	<body>
+		
+		<div class="tab-container">
+			
+			<button class="tab-links" onclick="openPage('About', this, 'pg3')" id="defaultOpen"> About </button>
+			<button class="tab-links" onclick="openPage('Rules', this, 'pg2')"> Rules </button>
+			<button class="tab-links" onclick="openPage('Feedback', this, 'pg4')"> Feedback </button>
+			<button class="tab-links" onclick="openPage('Contact', this, 'pg5')"> Contact </button>
+			
+		</div>
+
+		<div id="About" class="tab-content">
+			
+			<h3> About </h3>
+			
+			<p>
+				This is a dummy website.
+			</p>
+			
+		</div>
+		
+		<div id="Rules" class="tab-content">
+			
+			<h3> Rules </h3>
+			
+			<p>
+				Be kind.
+			</p>
+			
+		</div>
+		
+		<div id="Feedback" class="tab-content">
+			
+			<h3> Feedback </h3>
+			
+			<p>
+				Let us know...
+			</p>
+			
+		</div>
+		
+		<div id="Contact" class="tab-content">
+			
+			<h3> Contact </h3>
+			
+			<p>
+				Contact us at...
+			</p>
+			
+		</div>
+		
+		<script>
+			
+			document.getElementById("defaultOpen").click();
+			
+			function openPage(pageName, elmnt, tabName){
+				
+				var i, tabcontent, tablinks;
+				
+				tabcontent = document.getElementsByClassName("tab-content");
+				
+				for (i = 0; i < tabcontent.length; i++){
+					
+					tabcontent[i].style.display = "none";
+					
+				}
+				
+				tablinks = document.getElementsByClassName("tab-links");
+				
+				for (i = 0; i < tablinks.length; i++){
+					
+					tablinks[i].style.backgroundColor = "";
+					
+				}
+				
+				document.getElementById(pageName).style.display = "block";
+				elmnt.style.backgroundColor = color;
+				
+			}
+		</script>
+		
+	</body>
+</html>
